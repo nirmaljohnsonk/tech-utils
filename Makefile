@@ -1,4 +1,4 @@
-GIT_DOMAIN = https://github.com/nirmaljohnsonk
+GIT_DOMAIN = https://$(TOKEN)@github.com/nirmaljohnsonk
 update-debian:
 	sudo apt-get update && sudo apt-get upgrade -y
 
