@@ -16,11 +16,12 @@ install-docker:
 	sudo apt-get update
 	sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 	sudo usermod -aG docker $$USER
+	echo "Docker installed successfully now exit and login again"
 
+build: update-debian install-docker
 
 deploy:
 	git clone $(GIT_DOMAIN)/$(PROJECT_NAME).git
 	cd $(PROJECT_NAME) && docker compose up -d
 
-all: update-debian install-docker deploy 
 
