@@ -1,4 +1,11 @@
+#command line arguments for make file
+TOKEN = $(ARG_TOKEN)
+PROJECT_NAME = $(ARG_PROJECT_NAME)
+
+#make file variables 
 GIT_DOMAIN = https://$(TOKEN)@github.com/nirmaljohnsonk
+
+
 update-debian:
 	sudo apt-get update && sudo apt-get upgrade -y
 
