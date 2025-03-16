@@ -27,8 +27,12 @@ install-docker:
 
 build: update-debian install-docker
 
-deploy:
+clone:
 	git clone $(GIT_DOMAIN)/$(PROJECT_NAME).git
+
+docker:
 	cd $(PROJECT_NAME) && docker compose up -d
+
+deploy: clone docker
 
 
